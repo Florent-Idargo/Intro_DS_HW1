@@ -55,6 +55,43 @@ bibliography: quote.bib
 
 #### Nathalie Mayor
 
+##### Cats
+
+Cats are, I believe, are the funniest and cutest animals. Here is a picture to illustrate my conviction: 
+
+<div align="center">
+
+![cat sticking out its tongue](https://data.whicdn.com/images/95392179/original.jpg){width=250px}
+
+<div align="justify">
+
+There exist tons of pictures of cute cats on the internet, named "lolcats" this phenomenon has nearly evinced the actual goal of the web, i.e.:
+
+>"Web 1.0 was invented to allow physicists to share research papers. Web 2.0 was created to allow people to share pictures of cute cats." @zuckerman2014cute
+
+Cats even have plenty of emojis dedicated to them such as: `r emo::ji('heart_eyes_cat')`, `r emo::ji('heart_eyes_cat')`, `r emo::ji('scream_cat')`,  `r emo::ji('crying_cat_face')`, `r emo::ji('kissing_cat')` or  `r emo::ji('cat')`... even GitHub's icon is a cat!
+
+Here are some cat GIF as well.
+<div align="center">
+
+
+![big Cat GIF](https://media.giphy.com/media/13CoXDiaCcCoyk/giphy.gif) 
+![small Cat GIF](https://media1.giphy.com/media/mlvseq9yvZhba/giphy.gif){width=150px}
+
+<div align="justify">
+
+The following table shows my favourite races and their place of origin.
+
+
+|            Races             | Origin |
+|:----------------------------:|:------:|
+|             Ragdoll          |  US    |
+|             Birman           |Burma   |
+|             Siamese          |Thailand|
+|              Bombay          |Brumese |
+|             Persian          |  Iran  |
+
+
 # R Markdown Syntax
 
 #####4. Equation: 
