@@ -1,9 +1,11 @@
 ---
 title: "Intro_DS_HW1"
-author: "Group: Nathalie Mayor, Giovanni Magagnin, Florent Idargo, Alexandre Guerra"
+author: 'Group: Nathalie Mayor, Giovanni Magagnin, Florent Idargo, Alexandre Guerra'
 output:
   html_document:
     number_sections: yes
+  pdf_document: default
+  word_document: default
 bibliography: quote.bib
 ---
 Exercise 1: R Markdown Syntax
@@ -60,11 +62,6 @@ More info
 </div>
 
 ## A colorbox
-
-
-<div id="demo" class="collapse">
-<p>Some additional info… :)</p>
-</div>
 <div class="alert alert-success">
 <p><strong>Some important Info:</strong> something</p>
 
