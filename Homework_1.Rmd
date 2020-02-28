@@ -6,6 +6,7 @@ output:
     number_sections: yes
 bibliography: quote.bib
 ---
+Exercise 1: R Markdown Syntax
 
 # Introduction
 ## A picture with a caption
@@ -54,8 +55,12 @@ Points 7) et 8) de l'exercice R Markdown Syntax:
 <button data-toggle="collapse" data-target="#demo">
 More info
 </button>
+<div id="demo" class="collapse">
+<p>Some additional info… :)</p>
+</div>
 
 ## A colorbox
+
 
 <div id="demo" class="collapse">
 <p>Some additional info… :)</p>
