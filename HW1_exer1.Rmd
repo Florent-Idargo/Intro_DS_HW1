@@ -1,0 +1,107 @@
+---
+title: <div align="center"> Homework 1
+author: <div align="center"> 
+   Nathalie Mayor
+  - Giovanni Magagnin
+  - Florent Idargo
+  - Alexandre Guerra
+output:
+  html_document:
+  pdf_document: default
+  word_document: default
+bibliography: quote.bib
+---
+##Exercise 1: R Markdown Syntax
+
+### Introduction
+
+#### Alexandre Gerra
+
+##### 1. A picture with a caption
+
+
+![Bugatti Chiron](https://www.tuningblog.eu/wp-content/uploads/2019/09/Top-Gear-490-kmh-im-Tuning-Rekord-Bugatti-Chiron-Sport-2019.jpg)
+
+##### 2. A quote using BibTex
+
+> "L'absurdité est surtout le divorce de l'homme et du monde." @fitch1972etranger
+
+##### 3. Three emoji
+
+`r emo::ji('alien')` `r emo::ji('sunglasses')` `r emo::ji('fire')`
+
+#####4. A large and a small giphy
+
+![](https://i.pinimg.com/originals/77/a0/a9/77a0a982809ebe6b898bbed8fe0a0013.gif) 
+
+<img src='https://i.makeagif.com/media/11-19-2015/N2P_p_.gif' width='150' height='150' />
+
+#####5. A table having two columns
+
+|            Courses           | Time |
+|:----------------------------:|:----:|
+|       Microeconomics II      |  4H  |
+|         Macroéconomie        |  4H  |
+|     Development economics    |  4H  |
+| Introduction to data science |  4H  |
+|      Consumer behavior I     |  2H  |
+
+#####6. A short video
+
+<iframe width='560' height='315' src="https://www.youtube.com/embed/nUb4MovqcBY" frameborder='0' allowfullscreen></iframe>
+
+<br/>
+<br/>
+
+#### Nathalie Mayor
+
+# R Markdown Syntax
+
+#####4. Equation: 
+
+$$
+    \begin{aligned}
+             \mathbb{E} \left[ \text{var} \left\{
+                             \boldsymbol{v}_1\left(
+                               \hat{\boldsymbol{\theta}},n\right) \big|
+                             \hat{\boldsymbol{\theta}} \right\}  \right] 
+&=
+                         \text{var} \left\{ \mathbf{v}_1\left(
+                             \boldsymbol{\theta}_0,n\right)  \right\}  +
+                         \mathbb{E} \left[\mathcal{O}_p\left\{
+{\bf D}_1(\boldsymbol{\theta}^*,n)(\hat{\boldsymbol{\theta}} - \boldsymbol{\theta}_{0}), 
+\dots,
+{\bf D}_p(\boldsymbol{\theta}^*,n)(\boldsymbol{\theta} - \boldsymbol{\theta}_{0})
+\right\}\right]\\
+            &= \text{var} \left\{ \mathbf{v}_1\left( \boldsymbol{\theta}_0,n\right)  \right\}  + \mathcal{O}\left(n^{-2}\right).
+    \end{aligned}$$
+    
+    
+    
+#####5. Insertion of an in-line equation: 
+
+<em>in-line</em> equation: \(\mathbf{A} \equiv \left[a_{i,j}\right]_{i,j = 1, \ldots, p}\) 
+
+
+#####6. Colorized quote: 
+<font color="blue">“Vérité dans un temps, erreur dans un autre.”, Charles de Montesquieu</font></p>
+
+
+Points 7) et 8) de l'exercice R Markdown Syntax:
+(Il a dit que c'étair dur, c'est pour ça que j'ai déja test -> il y avait juste à aller dans le code source et copier son code à lui mdr #astuce)
+
+#####7. Button "More info"
+
+<button data-toggle="collapse" data-target="#demo">
+More info
+</button>
+<div id="demo" class="collapse">
+<p>Some additional info… :)</p>
+</div>
+
+#####8. A colorbox
+<div class="alert alert-success">
+<p><strong>Some important Info:</strong> something</p>
+
+# References
+
