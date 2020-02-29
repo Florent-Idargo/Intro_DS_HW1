@@ -91,8 +91,8 @@ The following table shows my favourite races and their place of origin.
 |              Bombay          |Brumese |
 |             Persian          |  Iran  |
 
-<div align="start">
-### Florent IDARGO
+
+#### Florent IDARGO
 
 
 
