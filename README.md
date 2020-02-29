@@ -1,3 +1,1 @@
 # GNAF
-
-foo
