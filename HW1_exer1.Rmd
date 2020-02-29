@@ -11,7 +11,7 @@ output:
   word_document: default
 bibliography: quote.bib
 ---
-##Exercise 1: R Markdown Syntax
+## Exercise 1: R Markdown Syntax
 
 ### Introduction
 
@@ -30,13 +30,13 @@ bibliography: quote.bib
 
 `r emo::ji('alien')` `r emo::ji('sunglasses')` `r emo::ji('fire')`
 
-#####4. A large and a small giphy
+##### 4. A large and a small giphy
 
 ![](https://i.pinimg.com/originals/77/a0/a9/77a0a982809ebe6b898bbed8fe0a0013.gif) 
 
 <img src='https://i.makeagif.com/media/11-19-2015/N2P_p_.gif' width='150' height='150' />
 
-#####5. A table having two columns
+##### 5. A table having two columns
 
 |            Courses           | Time |
 |:----------------------------:|:----:|
@@ -46,7 +46,7 @@ bibliography: quote.bib
 | Introduction to data science |  4H  |
 |      Consumer behavior I     |  2H  |
 
-#####6. A short video
+##### 6. A short video
 
 <iframe width='560' height='315' src="https://www.youtube.com/embed/nUb4MovqcBY" frameborder='0' allowfullscreen></iframe>
 
@@ -91,10 +91,14 @@ The following table shows my favourite races and their place of origin.
 |              Bombay          |Brumese |
 |             Persian          |  Iran  |
 
+<div align="start">
+### Florent IDARGO
+
+
 
 # R Markdown Syntax
 
-#####4. Equation: 
+##### 4. Equation: 
 
 $$
     \begin{aligned}
@@ -115,19 +119,19 @@ $$
     
     
     
-#####5. Insertion of an in-line equation: 
+##### 5. Insertion of an in-line equation: 
 
 <em>in-line</em> equation: \(\mathbf{A} \equiv \left[a_{i,j}\right]_{i,j = 1, \ldots, p}\) 
 
 
-#####6. Colorized quote: 
+##### 6. Colorized quote: 
 <font color="blue">“Vérité dans un temps, erreur dans un autre.”, Charles de Montesquieu</font></p>
 
 
 Points 7) et 8) de l'exercice R Markdown Syntax:
 (Il a dit que c'étair dur, c'est pour ça que j'ai déja test -> il y avait juste à aller dans le code source et copier son code à lui mdr #astuce)
 
-#####7. Button "More info"
+##### 7. Button "More info"
 
 <button data-toggle="collapse" data-target="#demo">
 More info
@@ -136,7 +140,7 @@ More info
 <p>Some additional info… :)</p>
 </div>
 
-#####8. A colorbox
+##### 8. A colorbox
 <div class="alert alert-success">
 <p><strong>Some important Info:</strong> something</p>
 
