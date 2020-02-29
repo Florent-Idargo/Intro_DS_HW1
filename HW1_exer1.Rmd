@@ -55,7 +55,7 @@ bibliography: quote.bib
 
 #### Nathalie Mayor
 
-##### Cats
+##### **Cats**
 
 Cats are, I believe, are the funniest and cutest animals. Here is a picture to illustrate my conviction: 
 
@@ -65,7 +65,7 @@ Cats are, I believe, are the funniest and cutest animals. Here is a picture to i
 
 <div align="justify">
 
-There exist tons of pictures of cute cats on the internet, named "lolcats" this phenomenon has nearly evinced the actual goal of the web, i.e.:
+There exist tons of pictures of cute cats on the internet, or "lolcats", this phenomenon has nearly evinced the actual goal of the web, i.e.:
 
 >"Web 1.0 was invented to allow physicists to share research papers. Web 2.0 was created to allow people to share pictures of cute cats." @zuckerman2014cute
 
@@ -83,7 +83,7 @@ Here are some cat GIF as well.
 The following table shows my favourite races and their place of origin.
 
 
-|            Races             | Origin |
+|            Race             | Origin |
 |:----------------------------:|:------:|
 |             Ragdoll          |  US    |
 |             Birman           |Burma   |
@@ -91,9 +91,15 @@ The following table shows my favourite races and their place of origin.
 |              Bombay          |Brumese |
 |             Persian          |  Iran  |
 
+Finally, a short video of cute cats doing funny things.
+
+<div align="center">
+<iframe width="560" height="315" src="https://www.youtube.com/embed/FHH6hIc2GyE" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+
 
 #### Florent IDARGO
-
 
 
 # R Markdown Syntax
