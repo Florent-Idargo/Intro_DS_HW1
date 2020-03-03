@@ -24,7 +24,7 @@ bibliography: quote.bib
 
 ##### 2. A quote using BibTex
 
-> "L'absurdité est surtout le divorce de l'homme et du monde." @fitch1972etranger
+> "L'absurdité est surtout le divorce de l'homme et du monde." @camus1988etranger
 
 ##### 3. Three emoji
 
