@@ -101,6 +101,60 @@ Finally, a short video of cute cats doing funny things.
 
 #### Florent IDARGO
 
+##### Picture
+![Annecy Lake / Semnoz](images/talloire_lac_annecy.jpg)
+
+##### BlockQuote
+
+>C’est une sensation très étrange, pour quelqu’un dans mon genre, d’écrire un journal. Non seulement je n’ai jamais écrit, mais il me semble que plus tard, ni moi ni personne ne s’intéressera aux confidences d’une écolière de treize ans.
+@frank2017journal
+
+##### Are these `r emo::ji('fire')` `r emo::ji('bear')` `r emo::ji('money_with_wings')` Emojis ?
+
+##### Giphies
+
+Large format GIF:
+<br style="clear:both"/>
+![Edward Munch The Scream](https://media.giphy.com/media/fnqOs8SULCF8I/giphy.gif)
+
+
+Small Format GIF:
+
+<img src='https://media.giphy.com/media/IThjAlJnD9WNO/giphy.gif' width='200' height='200' />
+
+##### Table 
+
++-----------------------------------------------------------+-----------------+
+| Class                                                     | Hours           |
++===========================================================+=================+
+| Economie Contemporaine dans une perspective historique    | - Tuesday 14-16 |
+|                                                           | - Thursday 10-12|
++-----------------------------------------------------------+-----------------+
+| Microeconomics II                                         | - Monday 10-12  |
+|                                                           | - Mardi 12-14   |
++-----------------------------------------------------------+-----------------+
+| Mathématique II                                           | - Monday 16-18  |
+|                                                           | - Wenesday 16-18|
++-----------------------------------------------------------+-----------------+
+| Data Science                                              | - Thursday 14-18|
+|                                                           |                 |
++-----------------------------------------------------------+-----------------+
+| Data Science                                              | - Thursday 14-18|
+|                                                           |                 |
++-----------------------------------------------------------+-----------------+
+| Introduction à la Fiscalité                               | - Friday 8-10   |
+|                                                           |                 |
++-----------------------------------------------------------+-----------------+
+| Business Games                                            | - Friday 14-18  |
+|                                                           |                 |
++-----------------------------------------------------------+-----------------+
+
+##### Video
+
+<iframe src="https://www.youtube.com/embed/5qap5aO4i9A" width='560' height='315' allowfullscreen frameborder='0'></iframe>
+
+
+
 
 # R Markdown Syntax
 
