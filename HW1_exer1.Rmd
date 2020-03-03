@@ -160,6 +160,7 @@ Small Format GIF:
 
 ##### 4. Equation: 
 
+
 $$
     \begin{aligned}
              \mathbb{E} \left[ \text{var} \left\{
