@@ -1,0 +1,25 @@
+---
+title: "HW1 Exercise 2"
+author: "Nathalie Mayor - Giovanni Magagnin - Alexandre Guerra - IDARGO Florent"
+date: "3/3/2020"
+output: html_document
+---
+```{r,echo=TRUE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
+
+quantmod::getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo")
+```
+<center>
+```{r}
+stocks <- list(UBER[,4],WORK[,4],TWTR[,4],CSCO[,4])
+par(mfrow= c(2,2))
+titres <- list("UBER", "WORK", "TWTR","CSCO")
+
+for (i in 1:4) {
+  #titre <- stocks[[1]][0]
+  leGraph <- plot(stocks[[i]],main = titres[i],xlim = c("2019-01-01","2019-12-31"))
+  print(leGraph)
+}
+```
+</center>
+
+
