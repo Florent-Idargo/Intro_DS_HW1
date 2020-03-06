@@ -157,6 +157,20 @@ Small Format GIF:
 
 
 # R Markdown Syntax
+##### 2. Normal simulation
+```{r}
+x<-rnorm(100,mean = 0,sd=1)
+mean(x)
+median(x)
+var(x)
+```
+
+
+#### 3. Histogram
+```{r}
+x<-rnorm(100,mean = 0,sd=1)
+hist(x,col = "orange",main = "Distribution of x")
+```
 
 ##### 4. Equation: 
 
