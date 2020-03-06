@@ -6,7 +6,7 @@ output: html_document
 ---
 ```{r,echo=TRUE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
 
-quantmod::getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo")
+quantmod::getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo", from="2019-01-01")
 ```
 <center>
 ```{r}
@@ -16,7 +16,7 @@ titres <- list("UBER", "WORK", "TWTR","CSCO")
 
 for (i in 1:4) {
   #titre <- stocks[[1]][0]
-  leGraph <- plot(stocks[[i]],main = titres[i],xlim = c("2019-01-01","2019-12-31"))
+  leGraph <- plot(stocks[[i]],main = titres[i])
   print(leGraph)
 }
 ```
