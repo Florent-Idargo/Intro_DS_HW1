@@ -1,6 +1,10 @@
 ---
-title: "HW1 Exercise 2"
-author: "Nathalie Mayor - Giovanni Magagnin - Alexandre Guerra - IDARGO Florent"
+title: <div align="center"> HW1 Exercise 2
+author: <div align="center"> 
+   Nathalie Mayor
+  - Giovanni Magagnin
+  - Florent Idargo
+  - Alexandre Guerra
 date: "3/3/2020"
 output: html_document
 ---
@@ -9,6 +13,7 @@ output: html_document
 quantmod::getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo", from="2019-01-01")
 ```
 <center>
+
 ```{r}
 stocks <- list(UBER[,4],WORK[,4],TWTR[,4],CSCO[,4])
 par(mfrow= c(2,2))
@@ -19,7 +24,81 @@ for (i in 1:4) {
   leGraph <- plot(stocks[[i]],main = titres[i])
   print(leGraph)
 }
+
+
 ```
 </center>
+
+
+```{r,echo=FALSE}
+library(quantmod)
+
+
+### 4 CANDLES
+
+today<-Sys.Date()
+four_months_ago <- seq(today, length = 2, by = "-4 months")[2]
+
+getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo", from=four_months_ago)
+
+
+candleChart(UBER, theme = 'white', type = 'candles')
+
+candleChart(WORK, theme = 'white', type = 'candles')
+
+candleChart(TWTR, theme = 'white', type = 'candles')
+
+candleChart(CSCO, theme = 'white', type = 'candles')
+
+
+### 5 MEAN AND VAR OF TS
+(ten_years_ago<-seq(today, length = 2, by = "-10 years")[2])
+
+getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo", from=ten_years_ago)
+
+UBER_returns <- na.omit(ClCl(UBER[,4]))
+mean_UBER<-mean(UBER_returns)
+var_UBER<-(UBER_returns)
+
+WORK_returns <- na.omit(ClCl(WORK[,4]))
+mean(WORK_returns)
+var(WORK_returns)
+
+TWTR_returns <- na.omit(ClCl(TWTR[,4]))
+mean(TWTR_returns)
+var(UBER_returns)
+
+CSCO_returns <- na.omit(ClCl(CSCO[,4]))
+mean(CSCO_returns)
+var(CSCO_returns)
+
+### 6
+
+annual_returns<-periodReturn(UBER,period = 'yearly',subset = '2010::')
+excessreturns<-annual_returns-0.03
+sharpe<-mean(annual_returns)/sd(annual_returns)
+print(sharpe)
+
+annual_returns<-periodReturn(WORK,period = 'yearly',subset = '2010::')
+excessreturns<-annual_returns-0.03
+sharpe<-mean(annual_returns)/sd(annual_returns)
+print(sharpe)
+
+annual_returns<-periodReturn(TWTR,period = 'yearly',subset = '2010::')
+excessreturns<-annual_returns-0.03
+sharpe<-mean(annual_returns)/sd(annual_returns)
+print(sharpe)
+
+annual_returns<-periodReturn(CSCO,period = 'yearly',subset = '2010::')
+excessreturns<-annual_returns-0.03
+sharpe<-mean(annual_returns)/sd(annual_returns)
+print(sharpe)
+
+```
+
+```{r}
+
+
+```
 
 
