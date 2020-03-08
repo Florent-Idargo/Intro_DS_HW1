@@ -167,9 +167,10 @@ Small Format GIF:
 `r emo::ji('smile')` `r emo::ji('fire')` `r emo::ji('dollar')`
 
 ##### 4. A large and a small giphy
-![large](https://media3.giphy.com/media/YPhuwt9pV2XLM2HIq4/giphy.webp?cid=790b7611ded2a52d55f19dcc3d6a02806876b2002db83801&rid=giphy.webp)
 
-![small](https://media2.giphy.com/media/ZEqYbUzUYGkuhwZHc1/200.webp?cid=790b7611ded2a52d55f19dcc3d6a02806876b2002db83801&rid=200.webp){width=150px}
+![large](https://media.giphy.com/media/YPhuwt9pV2XLM2HIq4/giphy.gif)
+
+![small](https://media.giphy.com/media/ZEqYbUzUYGkuhwZHc1/giphy.gif){width=150px}
 
 ##### 5. Table
 
