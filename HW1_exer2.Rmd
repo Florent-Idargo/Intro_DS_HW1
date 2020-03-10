@@ -16,14 +16,14 @@ output: html_document
 ---
 ```{r,echo=TRUE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
 
-quantmod::getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo", from="2019-01-01")
+quantmod::getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from="2019-01-01")
 ```
 <center>
 
 ```{r}
-stocks <- list(UBER[,4],WORK[,4],TWTR[,4],CSCO[,4])
+stocks <- list(VALE[,4],INTC[,4],WFC[,4],CSCO[,4])
 par(mfrow= c(2,2))
-titres <- list("UBER", "WORK", "TWTR","CSCO")
+titres <- list("VALE", "INTC", "WFC","CSCO")
 
 for (i in 1:4) {
   #titre <- stocks[[1]][0]
@@ -47,15 +47,15 @@ four_months_ago <- seq(today, length = 2, by = "-4 months")[2]
 ```
 
 ```{r,echo=TRUE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
-getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo", from=four_months_ago)
+getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from=four_months_ago)
 ```
 
 ```{r,echo=FALSE,warning=FALSE}
-candleChart(UBER, theme = 'white', type = 'candles')
+candleChart(VALE, theme = 'white', type = 'candles')
 
-candleChart(WORK, theme = 'white', type = 'candles')
+candleChart(INTC, theme = 'white', type = 'candles')
 
-candleChart(TWTR, theme = 'white', type = 'candles')
+candleChart(WFC, theme = 'white', type = 'candles')
 
 candleChart(CSCO, theme = 'white', type = 'candles')
 
@@ -66,60 +66,60 @@ paste("The ten years ago date is:", toString(ten_years_ago),sep=" ")
 ```
 
 ```{r,echo=FALSE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
-getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo", from=ten_years_ago)
+getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from=ten_years_ago)
 ```
 
 ```{r,echo=T}
 
-UBER_returns <- na.omit(ClCl(UBER[,4]))
-mean_UBER<-mean(UBER_returns)
-var_UBER<-var(UBER_returns)
-paste("The mean daily return since UBER's inception is:", toString(mean_UBER),sep=" ")
-paste("The mean daily variance since UBER's inception is:", toString(var_UBER),sep=" ")
-paste("As an indicative value, the mean daily volatility since UBER's inception is:", toString(sqrt(var_UBER)))
+VALE_returns <- na.omit(ClCl(VALE[,4]))
+mean_VALE<-mean(VALE_returns)
+var_VALE<-var(VALE_returns)
+paste("The mean daily return since VALE's inception is:", toString(mean_VALE),sep=" ")
+paste("The mean daily variance since VALE's inception is:", toString(var_VALE),sep=" ")
+paste("As an indicative value, the mean daily volatility since VALE's inception is:", toString(sqrt(var_VALE)))
 
 
-WORK_returns <- na.omit(ClCl(WORK[,4]))
-mean_WORK <- mean(WORK_returns)
-var_WORK <- var(WORK_returns)
-paste("The mean daily return over ten years of WORK is:", toString(mean_WORK),sep=" ")
-paste("The mean daily variance  over ten years of WORK is:", toString(var_WORK),sep=" ")
-paste("As an indicative value, the mean daily volatility since WORK's inception is:", toString(sqrt(var_WORK)))
+INTC_returns <- na.omit(ClCl(INTC[,4]))
+mean_INTC <- mean(INTC_returns)
+var_INTC <- var(INTC_returns)
+paste("The mean daily return over ten years of INTC is:", toString(mean_INTC),sep=" ")
+paste("The mean daily variance  over ten years of INTC is:", toString(var_INTC),sep=" ")
+paste("As an indicative value, the mean daily volatility since INTC's inception is:", toString(sqrt(var_INTC)))
 
-TWTR_returns <- na.omit(ClCl(TWTR[,4]))
-mean_TWTR <- mean(TWTR_returns)
-var_TWTR <- var(TWTR_returns)
-paste("The mean daily return over ten years of WORK is:", toString(mean_TWTR),sep=" ")
-paste("The mean daily variance over ten years of WORK is:", toString(var_TWTR),sep=" ")
-paste("As an indicative value, the mean daily volatility since TWTR's inception is:", toString(sqrt(var_TWTR)))
+WFC_returns <- na.omit(ClCl(WFC[,4]))
+mean_WFC <- mean(WFC_returns)
+var_WFC <- var(WFC_returns)
+paste("The mean daily return over ten years of INTC is:", toString(mean_WFC),sep=" ")
+paste("The mean daily variance over ten years of INTC is:", toString(var_WFC),sep=" ")
+paste("As an indicative value, the mean daily volatility since WFC's inception is:", toString(sqrt(var_WFC)))
 
 CSCO_returns <- na.omit(ClCl(CSCO[,4]))
 mean_CSCO <- mean(CSCO_returns)
 var_CSCO <- var(CSCO_returns)
-paste("The mean daily return over ten years of WORK is:", toString(mean_CSCO),sep=" ")
-paste("The mean daily variance over ten years of WORK is:", toString(var_CSCO),sep=" ")
+paste("The mean daily return over ten years of INTC is:", toString(mean_CSCO),sep=" ")
+paste("The mean daily variance over ten years of INTC is:", toString(var_CSCO),sep=" ")
 paste("As an indicative value, the mean daily volatility from the ten past years of CSCO is:", toString(sqrt(var_CSCO)))
 
 ### 6
 
-annual_returns<-periodReturn(UBER,period = 'yearly',subset = '2010::')
+annual_returns<-periodReturn(VALE,period = 'yearly',subset = '2010::')
 excessreturns<-annual_returns-0.03
 sharpe<-mean(annual_returns)/sd(annual_returns)
 #print(sharpe)
-paste("The sharpe ratio of UBER is:", toString(sharpe),sep=" ")
+paste("The sharpe ratio of VALE is:", toString(sharpe),sep=" ")
 
-annual_returns<-periodReturn(WORK,period = 'yearly',subset = '2010::')
+annual_returns<-periodReturn(INTC,period = 'yearly',subset = '2010::')
 excessreturns<-annual_returns-0.03
 sharpe<-mean(annual_returns)/sd(annual_returns)
 #print(sharpe)
-paste("The sharpe ratio of WORK is:", toString(sharpe),sep=" ")
+paste("The sharpe ratio of INTC is:", toString(sharpe),sep=" ")
 
 
-annual_returns<-periodReturn(TWTR,period = 'yearly',subset = '2010::')
+annual_returns<-periodReturn(WFC,period = 'yearly',subset = '2010::')
 excessreturns<-annual_returns-0.03
 sharpe<-mean(annual_returns)/sd(annual_returns)
 #print(sharpe)
-paste("The sharpe ratio of TWTR is:", toString(sharpe),sep=" ")
+paste("The sharpe ratio of WFC is:", toString(sharpe),sep=" ")
 
 annual_returns<-periodReturn(CSCO,period = 'yearly',subset = '2010::')
 excessreturns<-annual_returns-0.03
