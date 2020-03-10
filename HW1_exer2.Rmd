@@ -18,7 +18,7 @@ output: html_document
 
 quantmod::getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from="2019-01-01")
 ```
-<center>
+
 
 ```{r}
 stocks <- list(VALE[,4],INTC[,4],WFC[,4],CSCO[,4])
@@ -33,7 +33,6 @@ for (i in 1:4) {
 
 
 ```
-</center>
 
 
 ```{r,echo=FALSE}
@@ -128,6 +127,35 @@ sharpe<-mean(annual_returns)/sd(annual_returns)
 paste("The sharpe ratio of CSCO is:", toString(sharpe),sep=" ")
 
 ```
+### Question 7
+```{r,warning=FALSE,error=FALSE,message=FALSE}
+
+#####7
+quantmod::getSymbols(c("VALE","INTC","CSCO","WFC"),src="yahoo", from="2010-01-01")
+stocks <- list(VALE[,4],INTC[,4],CSCO[,4],WFC[,4])
+cumulated_var <- 0
+
+historique <- data.frame(vale_returns = ClCl(VALE[,4]),intc_returns = ClCl(INTC[,4]),csco_returns = ClCl(CSCO[,4]),wfc_returns = ClCl(WFC[,4]))
+historique <- historique[-1,]
+
+#Variance of the portofolio
+covariance_matrix <- matrix(cov(historique),ncol=4,nrow=4)
+weight_matrix <- matrix(rep(0.25,4),ncol=1,nrow=4)
+weight_matrix_transpose <- matrix(rep(0.25,4),ncol=4,nrow=1)
+
+variance_equally_weighted_portofolio <- weight_matrix_transpose %*% covariance_matrix %*% weight_matrix
+paste("The variance of the return of an equally weighted portofolio built of these four stocks is:", toString(round(variance_equally_weighted_portofolio,digits=6)), "and the volatility is:", toString(round(sqrt(variance_equally_weighted_portofolio),digit=5)), sep=" ")
+
+#single stocks average var
+
+for (stock in historique) {
+  cumulated_var <- cumulated_var + var(stock)
+}
+average_var_single_stock_portofolio = cumulated_var/4
+
+paste("The average variance of a portofolio made of 100% of one of these stocks is:", toString(round((cumulated_var/4),digits=5)), "and its average volatility would therefore be:",toString(round(sqrt((cumulated_var/4)),digits=5)))
+```
+We therefore observe that the volatility and variance of a single stock portofolio is consistently superior to the 4 equally weighted assets portofolio and has an approximately `r round((average_var_single_stock_portofolio/variance_equally_weighted_portofolio),digits=2)` higher variance. This clearly unerline the benefits from diversification.
 
 
 
