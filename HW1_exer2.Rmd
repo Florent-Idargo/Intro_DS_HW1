@@ -1,11 +1,5 @@
 ---
-title: "HW1 Exercise 2"
-author: "Nathalie Mayor - Giovanni Magagnin - Alexandre Guerra - IDARGO Florent"
-date: "3/3/2020"
-output: html_document
----
----
-title: <div align="center"> HW1 Exercise 2
+title: <div align="center"> HW1 Exercise 2 - Financial Analyis 
 author: <div align="center"> 
    Nathalie Mayor
   - Giovanni Magagnin
@@ -14,13 +8,14 @@ author: <div align="center">
 date: "3/3/2020"
 output: html_document
 ---
-```{r,echo=TRUE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
+
+```{r,echo=FALSE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
 
 quantmod::getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from="2019-01-01")
 ```
 
-
-```{r}
+<div align="center">
+```{r,echo=FALSE}
 stocks <- list(VALE[,4],INTC[,4],WFC[,4],CSCO[,4])
 par(mfrow= c(2,2))
 titres <- list("VALE", "INTC", "WFC","CSCO")
@@ -35,7 +30,7 @@ for (i in 1:4) {
 ```
 
 
-```{r,echo=FALSE}
+```{r,echo=FALSE,results="hide",error=FALSE,message=FALSE,warning=FALSE}
 library(quantmod)
 
 
@@ -45,21 +40,24 @@ today<-Sys.Date()
 four_months_ago <- seq(today, length = 2, by = "-4 months")[2]
 ```
 
-```{r,echo=TRUE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
 getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from=four_months_ago)
 ```
 
 ```{r,echo=FALSE,warning=FALSE}
-candleChart(VALE, theme = 'white', type = 'candles')
+candleChart(VALE, theme = 'white', type = 'candles',main='sdas')
 
 candleChart(INTC, theme = 'white', type = 'candles')
 
 candleChart(WFC, theme = 'white', type = 'candles')
 
 candleChart(CSCO, theme = 'white', type = 'candles')
+```
+<div align="justify">
 
-
+```{r,echo=FALSE,warning=FALSE}
 ### 5 MEAN AND VAR OF TS
+
 (ten_years_ago<-seq(today, length = 2, by = "-10 years")[2])
 paste("The ten years ago date is:", toString(ten_years_ago),sep=" ")
 ```
@@ -68,7 +66,7 @@ paste("The ten years ago date is:", toString(ten_years_ago),sep=" ")
 getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from=ten_years_ago)
 ```
 
-```{r,echo=T}
+```{r,echo=F}
 
 VALE_returns <- na.omit(ClCl(VALE[,4]))
 mean_VALE<-mean(VALE_returns)
