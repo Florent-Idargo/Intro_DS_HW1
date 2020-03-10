@@ -99,30 +99,27 @@ paste("As an indicative value, the mean daily volatility from the ten past years
 
 ### 6
 
-annual_returns<-periodReturn(VALE,period = 'yearly',subset = '2010::')
-excessreturns<-annual_returns-0.03
-sharpe<-mean(annual_returns)/sd(annual_returns)
-#print(sharpe)
-paste("The sharpe ratio of VALE is:", toString(sharpe),sep=" ")
 
-annual_returns<-periodReturn(INTC,period = 'yearly',subset = '2010::')
-excessreturns<-annual_returns-0.03
-sharpe<-mean(annual_returns)/sd(annual_returns)
-#print(sharpe)
-paste("The sharpe ratio of INTC is:", toString(sharpe),sep=" ")
+DRV<-dailyReturn(VALE[,4])
+DailySharpeV<-mean(DRV-0.03/252)/sd(DRV)
+AnnualSharpeV<-DailySharpeV*sqrt(252)
+paste("The sharpe ratio of VALE is:", toString(AnnualSharpeV),sep=" ")
 
 
-annual_returns<-periodReturn(WFC,period = 'yearly',subset = '2010::')
-excessreturns<-annual_returns-0.03
-sharpe<-mean(annual_returns)/sd(annual_returns)
-#print(sharpe)
-paste("The sharpe ratio of WFC is:", toString(sharpe),sep=" ")
+DRI<-dailyReturn(INTC[,4])
+DailySharpeI<-mean(DRI-0.03/252)/sd(DRI)
+AnnualSharpeI<-DailySharpeI*sqrt(252)
+paste("The sharpe ratio of INTC is:", toString(AnnualSharpeI),sep=" ")
 
-annual_returns<-periodReturn(CSCO,period = 'yearly',subset = '2010::')
-excessreturns<-annual_returns-0.03
-sharpe<-mean(annual_returns)/sd(annual_returns)
-#print(sharpe)
-paste("The sharpe ratio of CSCO is:", toString(sharpe),sep=" ")
+DRW<-dailyReturn(WFC[,4])
+DailySharpeW<-mean(DRW-0.03/252)/sd(DRW)
+AnnualSharpeW<-DailySharpeW*sqrt(252)
+paste("The sharpe ratio of WRC is:", toString(AnnualSharpeW),sep=" ")
+
+DRC<-dailyReturn(CSCO[,4])
+DailySharpeC<-mean(DRC-0.03/252)/sd(DRC)
+AnnualSharpeC<-DailySharpeC*sqrt(252)
+paste("The sharpe ratio of CSCO is:", toString(AnnualSharpeC),sep=" ")
 
 ```
 ### Question 7
