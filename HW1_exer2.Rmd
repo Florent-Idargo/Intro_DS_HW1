@@ -128,14 +128,14 @@ paste("The sharpe ratio of CSCO is:", toString(sharpe),sep=" ")
 
 ```
 ### Question 7
-```{r}
+```{r,warning=FALSE,error=FALSE,message=FALSE}
 
 #####7
-quantmod::getSymbols(c("UBER","WORK","TWTR","CSCO"),src="yahoo", from="2020-01-01")
-stocks <- list(UBER[,4],WORK[,4],TWTR[,4],CSCO[,4])
+quantmod::getSymbols(c("VALE","INTC","CSCO","WFC"),src="yahoo", from="2010-01-01")
+stocks <- list(VALE[,4],INTC[,4],CSCO[,4],WFC[,4])
 cumulated_var <- 0
 
-historique <- data.frame(uber_returns = ClCl(UBER[,4]),work_returns = ClCl(WORK[,4]),twtr_returns = ClCl(TWTR[,4]),csco_returns = ClCl(CSCO[,4]))
+historique <- data.frame(vale_returns = ClCl(VALE[,4]),intc_returns = ClCl(INTC[,4]),csco_returns = ClCl(CSCO[,4]),wfc_returns = ClCl(WFC[,4]))
 historique <- historique[-1,]
 
 #Variance of the portofolio
