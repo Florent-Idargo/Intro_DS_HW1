@@ -233,9 +233,6 @@ $$
 <font color="blue">“Vérité dans un temps, erreur dans un autre.”, Charles de Montesquieu</font></p>
 
 
-Points 7) et 8) de l'exercice R Markdown Syntax:
-(Il a dit que c'étair dur, c'est pour ça que j'ai déja test -> il y avait juste à aller dans le code source et copier son code à lui mdr #astuce)
-
 ##### 7. Button "More info"
 
 <button data-toggle="collapse" data-target="#demo">
