@@ -9,12 +9,19 @@ date: "3/3/2020"
 output: html_document
 ---
 
-```{r,echo=FALSE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
+### Question 1
+```{r,echo=TRUE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
+#install.packages("quantmod")
+library(quantmod)
+```
+### Question 2
 
+```{r,echo=TRUE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
 quantmod::getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from="2019-01-01")
 ```
 
-<div align="center">
+### Question 3
+
 ```{r,echo=FALSE}
 stocks <- list(VALE[,4],INTC[,4],WFC[,4],CSCO[,4])
 par(mfrow= c(2,2))
@@ -30,102 +37,189 @@ for (i in 1:4) {
 ```
 
 
+
+
+### Question 4
 ```{r,echo=FALSE,results="hide",error=FALSE,message=FALSE,warning=FALSE}
-library(quantmod)
-
-
-### 4 CANDLES
 
 today<-Sys.Date()
 four_months_ago <- seq(today, length = 2, by = "-4 months")[2]
-```
-
-```{r,echo=FALSE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
 getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from=four_months_ago)
 ```
 
-```{r,echo=FALSE,warning=FALSE}
-candleChart(VALE, theme = 'white', type = 'candles',main='sdas')
+```{r,echo=TRUE,warning=FALSE}
 
-candleChart(INTC, theme = 'white', type = 'candles')
+par(mfrow= c(2,2))
+chartSeries(VALE,"candlesticks", layout = NULL,theme = "white",TA=NULL)
+chartSeries(INTC,"candlesticks", layout = NULL,theme = "white",TA=NULL)
+chartSeries(WFC,"candlesticks", layout = NULL,theme = "white",TA=NULL)
+chartSeries(CSCO,"candlesticks", layout = NULL,theme = "white",TA=NULL)
 
-candleChart(WFC, theme = 'white', type = 'candles')
 
-candleChart(CSCO, theme = 'white', type = 'candles')
 ```
 <div align="justify">
 
 ```{r,echo=FALSE,warning=FALSE}
 ### 5 MEAN AND VAR OF TS
 
-(ten_years_ago<-seq(today, length = 2, by = "-10 years")[2])
-paste("The ten years ago date is:", toString(ten_years_ago),sep=" ")
+ten_years_ago<-seq(today, length = 2, by = "-10 years")[2]
+#paste("The ten years ago date is:", toString(ten_years_ago),sep=" ")
 ```
 
 ```{r,echo=FALSE,results='hide',error=FALSE,message=FALSE,warning=FALSE}
 getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from=ten_years_ago)
 ```
+### Question 5
 
-```{r,echo=F}
+```{r meanAndVar,echo=F}
 
 VALE_returns <- na.omit(ClCl(VALE[,4]))
 mean_VALE<-mean(VALE_returns)
 var_VALE<-var(VALE_returns)
-paste("The mean daily return since VALE's inception is:", toString(mean_VALE),sep=" ")
-paste("The mean daily variance since VALE's inception is:", toString(var_VALE),sep=" ")
-paste("As an indicative value, the mean daily volatility since VALE's inception is:", toString(sqrt(var_VALE)))
+#paste("The mean daily return since VALE's inception is:", toString(mean_VALE),sep=" ")
+#paste("The mean daily variance since VALE's inception is:", toString(var_VALE),sep=" ")
+#paste("As an indicative value, the mean daily volatility since VALE's inception is:", toString(sqrt(var_VALE)))
 
 
 INTC_returns <- na.omit(ClCl(INTC[,4]))
 mean_INTC <- mean(INTC_returns)
 var_INTC <- var(INTC_returns)
-paste("The mean daily return over ten years of INTC is:", toString(mean_INTC),sep=" ")
-paste("The mean daily variance  over ten years of INTC is:", toString(var_INTC),sep=" ")
-paste("As an indicative value, the mean daily volatility since INTC's inception is:", toString(sqrt(var_INTC)))
+#paste("The mean daily return over ten years of INTC is:", toString(mean_INTC),sep=" ")
+#paste("The mean daily variance  over ten years of INTC is:", toString(var_INTC),sep=" ")
+#paste("As an indicative value, the mean daily volatility since INTC's inception is:", toString(sqrt(var_INTC)))
 
 WFC_returns <- na.omit(ClCl(WFC[,4]))
 mean_WFC <- mean(WFC_returns)
 var_WFC <- var(WFC_returns)
-paste("The mean daily return over ten years of INTC is:", toString(mean_WFC),sep=" ")
-paste("The mean daily variance over ten years of INTC is:", toString(var_WFC),sep=" ")
-paste("As an indicative value, the mean daily volatility since WFC's inception is:", toString(sqrt(var_WFC)))
+#paste("The mean daily return over ten years of INTC is:", toString(mean_WFC),sep=" ")
+#paste("The mean daily variance over ten years of INTC is:", toString(var_WFC),sep=" ")
+#paste("As an indicative value, the mean daily volatility since WFC's inception is:", toString(sqrt(var_WFC)))
 
 CSCO_returns <- na.omit(ClCl(CSCO[,4]))
 mean_CSCO <- mean(CSCO_returns)
 var_CSCO <- var(CSCO_returns)
-paste("The mean daily return over ten years of INTC is:", toString(mean_CSCO),sep=" ")
-paste("The mean daily variance over ten years of INTC is:", toString(var_CSCO),sep=" ")
-paste("As an indicative value, the mean daily volatility from the ten past years of CSCO is:", toString(sqrt(var_CSCO)))
+#paste("The mean daily return over ten years of INTC is:", toString(mean_CSCO),sep=" ")
+#paste("The mean daily variance over ten years of INTC is:", toString(var_CSCO),sep=" ")
+#paste("As an indicative value, the mean daily volatility from the ten past years of CSCO is:", toString(sqrt(var_CSCO)))
+```
+<style>
+#Mean_Var {
+  margin: 14px 0;
+}
+#Mean_Var tr th,#Mean_Var tr td{
+  padding:10px;
+  text-align: center;
+}
+#Mean_Var tr th {
+  border-bottom: 1px solid rgba(20,20,20,0.7);
+}
+</style>
 
-### 6
+<table id="Mean_Var">
+  <tr>
+    
+    <th> TICKER </th>
+    <th> Mean Daily Return (10 years period) </th>
+    <th> Daily variance (10 years period) </th>
+    <th> Daily volatility (10 years period) </th>
+  </tr>
+  <tr>
+    <td> VALE </td>
+    <td> `r toString(round(mean_VALE,digits=5))`  </td>
+    <td> `r toString(round(var_VALE,digits=5))` </td>
+    <td> `r toString(round(sqrt(var_VALE),digits=5))` </td>
+  </tr>
+  <tr>
+    <td> INTC </td>
+    <td> `r toString(round(mean_INTC,digits=5))`  </td>
+    <td> `r toString(round(var_INTC,digits=5))` </td>
+    <td> `r toString(round(sqrt(var_INTC),digits=5))` </td>
+  </tr>
+  <tr>
+    <td> WFC </td>
+    <td> `r toString(round(mean_WFC,digits=5))`  </td>
+    <td> `r toString(round(var_WFC,digits=5))` </td>
+    <td> `r toString(round(sqrt(var_WFC),digits=5))` </td>
+  </tr>
+  <tr>
+    <td> CSCO </td>
+    <td> `r toString(round(mean_CSCO,digits=5))`  </td>
+    <td> `r toString(round(var_CSCO,digits=5))` </td>
+    <td> `r toString(round(sqrt(var_CSCO),digits=5))` </td>
+  </tr>
 
+</table>
+
+### Question 6
+
+```{r,echo=FALSE}
 
 DRV<-dailyReturn(VALE[,4])
 DailySharpeV<-mean(DRV-0.03/252)/sd(DRV)
 AnnualSharpeV<-DailySharpeV*sqrt(252)
-paste("The sharpe ratio of VALE is:", toString(AnnualSharpeV),sep=" ")
+#paste("The sharpe ratio of VALE is:", toString(AnnualSharpeV),sep=" ")
 
 
 DRI<-dailyReturn(INTC[,4])
 DailySharpeI<-mean(DRI-0.03/252)/sd(DRI)
 AnnualSharpeI<-DailySharpeI*sqrt(252)
-paste("The sharpe ratio of INTC is:", toString(AnnualSharpeI),sep=" ")
+#paste("The sharpe ratio of INTC is:", toString(AnnualSharpeI),sep=" ")
 
 DRW<-dailyReturn(WFC[,4])
 DailySharpeW<-mean(DRW-0.03/252)/sd(DRW)
 AnnualSharpeW<-DailySharpeW*sqrt(252)
-paste("The sharpe ratio of WRC is:", toString(AnnualSharpeW),sep=" ")
+#paste("The sharpe ratio of WRC is:", toString(AnnualSharpeW),sep=" ")
 
 DRC<-dailyReturn(CSCO[,4])
 DailySharpeC<-mean(DRC-0.03/252)/sd(DRC)
 AnnualSharpeC<-DailySharpeC*sqrt(252)
-paste("The sharpe ratio of CSCO is:", toString(AnnualSharpeC),sep=" ")
+#paste("The sharpe ratio of CSCO is:", toString(AnnualSharpeC),sep=" ")
 
 ```
+<style>
+#Sharp {
+  margin: 14px 0;
+  width: 80%;
+  
+  
+}
+#Sharp tr th,#Sharp tr td{
+  padding:10px;
+  text-align:center;
+}
+#Sharp tr th {
+  border-bottom: 1px solid rgba(20,20,20,0.7);
+  
+}
+</style>
+<center>
+<table id="Sharp">
+  <tr>
+    <th >TICKER</th>
+    <th >Sharp Ratio</th>
+  </tr>
+  <tr>
+    <td>VALE</td>
+    <td>`r toString(round(AnnualSharpeV,digits=3))`</td>
+  </tr>
+  <tr>
+    <td>INTC</td>
+    <td>`r toString(round(AnnualSharpeI,digits=3))`</td>
+  </tr>
+  <tr>
+    <td>WFC</td>
+    <td>`r toString(round(AnnualSharpeW,digits=3))`</td>
+  </tr>
+  <tr>
+    <td>CSCO</td>
+    <td>`r toString(round(AnnualSharpeC,digits=3))`</td>
+  </tr>
+</table>
+</center>
+      
+   
 ### Question 7
 ```{r,warning=FALSE,error=FALSE,message=FALSE}
-
-#####7
 quantmod::getSymbols(c("VALE","INTC","CSCO","WFC"),src="yahoo", from="2010-01-01")
 stocks <- list(VALE[,4],INTC[,4],CSCO[,4],WFC[,4])
 cumulated_var <- 0
