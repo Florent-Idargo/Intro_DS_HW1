@@ -6,7 +6,7 @@ author: <div align="center">
   - Florent Idargo
   - Alexandre Guerra
 output:
-  html_document:
+  html_document: default
   pdf_document: default
   word_document: default
 bibliography: quote.bib
@@ -187,6 +187,15 @@ Small Format GIF:
 
 
 # R Markdown Syntax
+##### 1. Chunk option: cache=T
+```{r 1, cache=TRUE}
+a=4
+```
+```{r 2, cache=TRUE}
+(b=2*a)
+```
+There we can see an error because at first we put a=3 and then we changed the value of a (=4) but we didn't used in the second computation (b=2*a) the function "depends on".
+
 ##### 2. Normal simulation
 ```{r}
 x<-rnorm(100,mean = 0,sd=1)
@@ -238,9 +247,6 @@ $$
 ##### 6. Colorized quote: 
 <font color="blue">“Vérité dans un temps, erreur dans un autre.”, Charles de Montesquieu</font></p>
 
-
-Points 7) et 8) de l'exercice R Markdown Syntax:
-(Il a dit que c'étair dur, c'est pour ça que j'ai déja test -> il y avait juste à aller dans le code source et copier son code à lui mdr #astuce)
 
 ##### 7. Button "More info"
 
