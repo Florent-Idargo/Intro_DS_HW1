@@ -20,6 +20,8 @@ library(quantmod)
 quantmod::getSymbols(c("VALE","INTC","WFC","CSCO"),src="yahoo", from="2019-01-01")
 ```
 
+<div align="center">
+
 ### Question 3
 
 ```{r,echo=FALSE}
@@ -57,7 +59,7 @@ chartSeries(CSCO,"candlesticks", layout = NULL,theme = "white",TA=NULL)
 
 
 ```
-<div align="justify">
+
 
 ```{r,echo=FALSE,warning=FALSE}
 ### 5 MEAN AND VAR OF TS
