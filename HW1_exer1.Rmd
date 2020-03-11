@@ -195,6 +195,12 @@ median(x)
 var(x)
 ```
 
+The expected mean is 0, the sample mean is not exactly equal to that, this is because sampling is random, and its mean is random correspondingly. The same goes for the median.
+
+The expecation of standard deviation is 1. The standard deviation of samples is not the same concept with that of standard normal distribution, hence the sample standard deviation is not exactly equal to 1.
+
+This is not surprising.
+
 
 #### 3. Histogram
 ```{r}
