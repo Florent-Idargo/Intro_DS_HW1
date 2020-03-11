@@ -117,7 +117,6 @@ var_CSCO <- var(CSCO_returns)
 
 <table id="Mean_Var">
   <tr>
-    
     <th> TICKER </th>
     <th> Mean Daily Return (10 years period) </th>
     <th> Daily variance (10 years period) </th>
